@@ -1,7 +1,7 @@
 # Introduction
-This project shows two things, \
-    1. how to implement Kubernetes Cluster Autoscaler on EKS \
-    2. how to make a specific pod can only be scheduled on a node in the assigned node group and the number of nodes can be scaled up from 0 and down to 0 automatically. This is extremely helpful when doing ML model training.
+This project shows two things, 
+1. how to implement Kubernetes Cluster Autoscaler on EKS 
+2. how to make a specific pod can only be scheduled on a node in the assigned node group and the number of nodes can be scaled up from 0 and down to 0 automatically. This is extremely helpful when doing ML model training.
 
 # References
 1. [AWS > Documentation > Amazon EKS > User Guide > Clusters > Autoscaling](https://docs.aws.amazon.com/eks/latest/userguide/autoscaling.html)
