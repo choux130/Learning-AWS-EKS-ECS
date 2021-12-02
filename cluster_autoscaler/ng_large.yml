@@ -1,0 +1,27 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster
+  region: us-east-1
+
+managedNodeGroups:
+  - name: ng-large
+    instanceType: t3.2xlarge
+    desiredCapacity: 0
+    minSize: 0
+    maxSize: 1
+    volumeSize: 20
+    taints:
+      - key: "training"
+        value: "cpu"
+        effect: "NoSchedule"
+    labels: 
+      purpose: large-app
+    tags:
+      k8s.io/cluster-autoscaler/enabled: "true"
+      k8s.io/cluster-autoscaler/node-template/label/purpose: large-app
+      k8s.io/cluster-autoscaler/node-template/taint/training: cpu:NoSchedule
+    iam:
+      withAddonPolicies:
+        autoScaler: true
